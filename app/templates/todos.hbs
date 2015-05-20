@@ -2,15 +2,8 @@
 
 <section id="main">
   <ul id="todo-list">
-    {{#each model}}
-      <li {{bind-attr class="isCompleted:completed isEditing:editing"}}>
-        {{#if isEditing}}
-          <input class="edit">
-        {{else}}
-          {{input type="checkbox" checked=isCompleted class="toggle"}}
-          <label {{action "editTodo" on="doubleClick"}}>{{title}}</label><button class="destroy"></button>
-        {{/if}}
-      </li>
+    {{#each todo in model}}
+      {{list-item todo=todo}}
     {{/each}}
   </ul>
 </section>
