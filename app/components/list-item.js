@@ -5,6 +5,7 @@ export default Ember.Component.extend({
     editTodo: function() {
       this.set('isEditing', true);
     },
+
     acceptChanges: function() {
       this.set('isEditing', false);
 
@@ -14,8 +15,8 @@ export default Ember.Component.extend({
         this.get('todo').save();
       }
     },
+
     removeTodo: function() {
-      console.log("remove activated");
       var todo = this.get('todo');
       todo.deleteRecord();
       todo.save();
